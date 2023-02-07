@@ -5,17 +5,6 @@ function generateRGB(): number[] {
     return [r, g ,b];
 }
 
-export function matchTheRGB() {
-    const str = "54cdc180-color:rgb(180,0,255);";
-    const matches = str.match(/rgb\((\d+),(\d+),(\d+)\)/);
-
-    if (Array.isArray(matches)) {
-        const [_, r, g, b] = matches;
-
-        console.log(r, g, b); // 180 0 255
-    }
-}
-
 export function generateAdvancedRGB(similarTo: number[] = [0,0,0], variance = 50) {
     if (!similarTo.length) {
         generateRGB()
