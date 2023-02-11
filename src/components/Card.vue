@@ -14,7 +14,7 @@ export default {
   props: ['preColor'],
   data() {
     return {
-      color: this.preColor || generateAdvancedRGB([144,209,21])
+      color: this.preColor || generateAdvancedRGB([])
     }
   }
 }
@@ -33,7 +33,10 @@ export default {
   justify-content: center;
   align-items: center;
 
+  padding-right: 1rem;
+  padding-left: 1rem;
   padding-top: 70px;
+
   width: 50%;
 }
 </style>

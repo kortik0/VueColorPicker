@@ -16,6 +16,8 @@ import Board from "./components/Board.vue";
 }
 
 #app {
+  min-width: 100vw;
+  min-height: 100vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

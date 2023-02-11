@@ -1,6 +1,5 @@
 <template>
   <div id="board">
-    <p>Hello World</p>
     <div class="flexbox">
       <div class="answer">
         <Card :pre-color="preInitColor"/>
@@ -34,13 +33,6 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 20px;
-  font-weight: bold;
-  color: aqua;
-  padding-top: 20px;
-}
-
 .answer {
   justify-content: center;
 }
@@ -54,7 +46,7 @@ p {
   position: relative;
   margin: 0 auto;
   width: 80vw;
-  height: 100vh;
+  min-height: 100vh;
   background: #2c3e50;
 }
 </style>
