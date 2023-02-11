@@ -2,10 +2,10 @@
   <div id="board">
     <div class="flexbox">
       <div class="answer">
-        <Card :pre-color="preInitColor"/>
+        <Card :color="preInitColor"/>
       </div>
       <div>
-        <Card @click="verify" v-for="n in 4" :key="n"/>
+        <Card @click="verify" v-for="n in 4" :key="n" :color="this.colors[n]"/>
       </div>
     </div>
   </div>
@@ -13,19 +13,25 @@
 
 <script>
 import Card from "./Card.vue";
-import {generateAdvancedRGB} from "../ mixed/RGBgenerator";
+import {generateRGB, generateSimilarRGB, parseRGB} from "../ mixed/RGBgenerator";
 
 export default {
   name: "Board",
   data() {
     return {
-      preInitColor: generateAdvancedRGB(),
+      preInitColor: "",
+      colors: []
     }
+  },
+  mounted() {
+    this.preInitColor = generateRGB()
+    this.colors = generateSimilarRGB(this.preInitColor)
   },
   methods: {
     verify(event) {
-      //TODO: one of component must be the same color as preInitColor and need to write a function which would parse shitty Vue code
-      console.log(event.currentTarget.style.cssText)
+      if (event.currentTarget.style.cssText) {
+        console.log(parseRGB(event.currentTarget.style.cssText, true))
+      }
     }
   },
   components: {Card}

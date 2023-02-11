@@ -6,15 +6,13 @@
 </template>
 
 <script>
-import {generateAdvancedRGB} from "../ mixed/RGBgenerator";
-
 
 export default {
   name: "Card",
-  props: ['preColor'],
+  props: ['color'],
   data() {
     return {
-      color: this.preColor || generateAdvancedRGB([])
+      color: this.color
     }
   }
 }
